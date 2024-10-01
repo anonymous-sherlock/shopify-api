@@ -1,0 +1,30 @@
+{
+  "name": "shopify-api",
+  "scripts": {
+    "dev": "wrangler dev src/app.ts",
+    "deploy": "wrangler deploy --minify src/app.ts",
+    "db:run": "turso dev --db-file drizzle-turso-db.db",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "db:push": "drizzle-kit push",
+    "db:up": "drizzle-kit up",
+    "migrate": "npx prisma migrate diff --from-migrations  --script > new_migration.sql"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.10.0",
+    "dotenv-cli": "^7.4.2",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.5.11",
+    "nanoid": "^5.0.7",
+    "pg": "^8.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.24.2",
+    "tsx": "^4.19.0",
+    "wrangler": "^3.57.2"
+  }
+}
